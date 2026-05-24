@@ -44,7 +44,7 @@ export const portfolioData = {
           { label: "Backend", url: "https://github.com/Dikshant005/ConnectHub" },
           { label: "Frontend", url: "https://github.com/Dikshant005/ConnectHub-frontend" }
         ],
-        demo: "https://connect-hub-virid.vercel.app/"
+        demo: "https://connect-hub-frontend-beryl.vercel.app/"
       },
       {
         title: "Titan Strength",
@@ -54,7 +54,7 @@ export const portfolioData = {
           { label: "Backend", url: "https://github.com/Dikshant005/titan-strength" },
           { label: "Frontend", url: "https://github.com/Dikshant005/titan-strength-frontend" }
         ],
-        demo: "https://titan-strength.vercel.app/"
+        demo: "https://titan-strength-frontend.vercel.app/"
       }
     ]
   },
