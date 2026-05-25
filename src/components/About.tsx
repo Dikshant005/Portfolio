@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Code2, ShieldCheck, Palette } from 'lucide-react';
+import { Code2, ShieldCheck, Palette } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
 import profilePic from '../assets/profile.jpg';
