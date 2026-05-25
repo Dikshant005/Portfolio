@@ -14,15 +14,15 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.8 }}
           style={{ textAlign: 'center', marginBottom: '5rem' }}
         >
-          <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontWeight: 800 }}>{portfolioData.projects.title}</h2>
-          <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
+          <h2 style={{ fontSize: 'var(--h2-font)', marginBottom: '1rem', fontWeight: 800 }}>{portfolioData.projects.title}</h2>
+          <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', fontSize: 'var(--p-font)' }}>
             {portfolioData.projects.description}
           </p>
         </motion.div>
         
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', 
           gap: '2.5rem' 
         }}>
           {portfolioData.projects.list.map((project, index) => (

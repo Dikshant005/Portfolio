@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { User, Code2, ShieldCheck, Palette } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
+import profilePic from '../assets/profile.jpg';
+
 const iconMap = {
   Code2: <Code2 size={20} />,
   ShieldCheck: <ShieldCheck size={20} />,
@@ -13,21 +15,21 @@ const About: React.FC = () => {
   return (
     <section id="about">
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '2rem', fontWeight: 800 }}>{portfolioData.about.title.split(' ')[0]} <span className="gradient-text">{portfolioData.about.title.split(' ')[1]}</span></h2>
+            <h2 style={{ fontSize: 'var(--h2-font)', marginBottom: '2rem', fontWeight: 800 }}>{portfolioData.about.title.split(' ')[0]} <span className="gradient-text">{portfolioData.about.title.split(' ')[1]}</span></h2>
             {portfolioData.about.bio.map((paragraph, index) => (
-              <p key={index} style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              <p key={index} style={{ fontSize: 'var(--p-font)', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 {paragraph}
               </p>
             ))}
             
-            <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem' }}>
+            <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
               {portfolioData.about.roles.map((role, index) => (
                 <div key={index} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <div style={{ color: index % 2 === 0 ? 'var(--secondary)' : 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}>
@@ -58,21 +60,27 @@ const About: React.FC = () => {
               opacity: 0.2,
               filter: 'blur(20px)'
             }}></div>
-            <div className="glass-card" style={{ padding: '3rem', textAlign: 'center', borderRadius: '24px' }}>
+            <div className="glass-card" style={{ padding: 'var(--p-font)', textAlign: 'center', borderRadius: '24px' }}>
               <div style={{ 
-                width: '180px', 
-                height: '180px', 
+                width: 'clamp(120px, 20vw, 180px)', 
+                height: 'clamp(120px, 20vw, 180px)', 
                 borderRadius: '50%', 
                 background: 'var(--gradient-main)',
                 margin: '0 auto 2.5rem',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 10px 30px rgba(99, 102, 241, 0.4)'
+                boxShadow: '0 10px 30px rgba(99, 102, 241, 0.4)',
+                overflow: 'hidden',
+                border: '4px solid rgba(255, 255, 255, 0.1)'
               }}>
-                <User size={80} color="white" />
+                <img 
+                  src={profilePic} 
+                  alt={portfolioData.about.card.name} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', fontWeight: 700 }}>{portfolioData.about.card.name}</h3>
+              <h3 style={{ fontSize: 'var(--h3-font)', marginBottom: '0.5rem', fontWeight: 700 }}>{portfolioData.about.card.name}</h3>
               <p style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1.1rem', marginBottom: '1rem' }}>{portfolioData.about.card.role}</p>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>{portfolioData.about.card.tagline}</p>
             </div>

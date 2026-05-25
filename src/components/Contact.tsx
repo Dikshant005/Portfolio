@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact">
       <div className="container">
-        <div className="glass-card" style={{ padding: '5rem 2rem', textAlign: 'center', borderRadius: '32px', position: 'relative', overflow: 'hidden' }}>
+        <div className="glass-card" style={{ padding: 'clamp(2rem, 10vw, 5rem) 1.5rem', textAlign: 'center', borderRadius: '32px', position: 'relative', overflow: 'hidden' }}>
           {/* Subtle decorative circle */}
           <div style={{
             position: 'absolute',
@@ -29,16 +29,16 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 style={{ fontSize: '4rem', marginBottom: '1.5rem', fontWeight: 800 }}>Let's <span className="gradient-text">Connect</span></h2>
-            <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 4rem', fontSize: '1.25rem', lineHeight: 1.6 }}>
+            <h2 style={{ fontSize: 'var(--h2-font)', marginBottom: '1.5rem', fontWeight: 800 }}>Let's <span className="gradient-text">Connect</span></h2>
+            <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 4rem', fontSize: 'var(--p-font)', lineHeight: 1.6 }}>
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
             
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem', marginBottom: '4rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '4rem', flexWrap: 'wrap' }}>
               {[
-                { icon: <Mail size={28} />, href: `mailto:${portfolioData.social.email}`, label: "Email" },
-                { icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: '28px' }} />, href: portfolioData.social.github, label: "GitHub" },
-                { icon: <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: '28px' }} />, href: portfolioData.social.linkedin, label: "LinkedIn" }
+                { icon: <Mail size={24} />, href: `mailto:${portfolioData.social.email}`, label: "Email" },
+                { icon: <FontAwesomeIcon icon={faGithub} style={{ fontSize: '24px' }} />, href: portfolioData.social.github, label: "GitHub" },
+                { icon: <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: '24px' }} />, href: portfolioData.social.linkedin, label: "LinkedIn" }
               ].map((item, index) => (
                 <motion.a 
                   key={index}
@@ -57,8 +57,8 @@ const Contact: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     transition: 'all 0.3s',
-                    width: '64px',
-                    height: '64px'
+                    width: '56px',
+                    height: '56px'
                   }}
                   title={item.label}
                 >
@@ -72,9 +72,9 @@ const Contact: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               href={`mailto:${portfolioData.social.email}`}
               className="btn" 
-              style={{ fontSize: '1.3rem', padding: '1.2rem 4rem', display: 'inline-flex', alignItems: 'center', gap: '0.8rem' }}
+              style={{ fontSize: 'var(--p-font)', padding: '1rem 3rem', display: 'inline-flex', alignItems: 'center', gap: '0.8rem' }}
             >
-              <Send size={24} /> Start a Conversation
+              <Send size={20} /> Start a Conversation
             </motion.a>
           </motion.div>
         </div>

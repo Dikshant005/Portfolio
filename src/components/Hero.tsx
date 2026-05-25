@@ -5,7 +5,7 @@ import { portfolioData } from '../data/portfolio';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" style={{ height: '100vh', textAlign: 'center', position: 'relative' }}>
+    <section id="hero" style={{ minHeight: '100vh', textAlign: 'center', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             <Sparkles size={16} /> {portfolioData.hero.badge}
           </motion.div>
           
-          <h1 style={{ fontSize: '5rem', marginBottom: '1.5rem', lineHeight: 1.05, fontWeight: 800, letterSpacing: '-0.03em' }}>
+          <h1 style={{ fontSize: 'var(--h1-font)', marginBottom: '1.5rem', lineHeight: 1.05, fontWeight: 800, letterSpacing: '-0.03em' }}>
             <span className="gradient-text">{portfolioData.hero.title}</span>
           </h1>
           
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            style={{ fontSize: '1.3rem', color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto 3rem', lineHeight: 1.6 }}
+            style={{ fontSize: 'var(--p-font)', color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto 3rem', lineHeight: 1.6 }}
           >
             {portfolioData.hero.description}
           </motion.p>
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}
+            style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}
           >
             <a href="#projects" className="btn">View My Work</a>
             <a href="#contact" style={{ 
